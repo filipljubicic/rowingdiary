@@ -1,7 +1,15 @@
 <div class="jumbotron center">
      <h1>Welcome to Rowing Diary!</h1>
-     <p>Manage your ergo scores online!
-       <%= link_to "Log in", "#", class: "btn btn-default btn-lg" %>
-       <%= link_to "Sign up", "#", class: "btn btn-primary btn-lg" %>
-  </p>    
+
+     <% if user_signed_in? %>
+     	# do something
+     	<% else %>
+
+     		<p>Manage your ergo scores online!
+      		 <%= link_to "Log in", user_session_path, class: "btn btn-default btn-lg" %>
+      		 <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+ 			 </p>    
+
+  		<% end %>
+
 </div>
