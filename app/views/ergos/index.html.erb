@@ -1,0 +1,29 @@
+<h1>Listing ergos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Score</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ergos.each do |ergo| %>
+      <tr>
+        <td><%= ergo.description %></td>
+        <td><%= ergo.score %></td>
+        <td><%= link_to 'Show', ergo %></td>
+        <td><%= link_to 'Edit', edit_ergo_path(ergo) %></td>
+        <td><%= link_to 'Destroy', ergo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ergo', new_ergo_path %>

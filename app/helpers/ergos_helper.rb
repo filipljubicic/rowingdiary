@@ -1,0 +1,2 @@
+module ErgosHelper
+end
