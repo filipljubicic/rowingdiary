@@ -1,63 +1,46 @@
 class ErgosController < ApplicationController
   before_action :set_ergo, only: [:show, :edit, :update, :destroy]
 
-  # GET /ergos
-  # GET /ergos.json
   def index
     @ergos = Ergo.all
   end
 
-  # GET /ergos/1
-  # GET /ergos/1.json
   def show
   end
 
-  # GET /ergos/new
   def new
     @ergo = Ergo.new
   end
 
-  # GET /ergos/1/edit
   def edit
   end
 
-  # POST /ergos
-  # POST /ergos.json
   def create
     @ergo = Ergo.new(ergo_params)
 
     respond_to do |format|
       if @ergo.save
-        format.html { redirect_to @ergo, notice: 'Ergo was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @ergo }
+        redirect_to @ergo, notice: 'Ergo was successfully created.'
       else
-        format.html { render action: 'new' }
-        format.json { render json: @ergo.errors, status: :unprocessable_entity }
+        render action: 'new'
       end
     end
   end
 
-  # PATCH/PUT /ergos/1
-  # PATCH/PUT /ergos/1.json
   def update
     respond_to do |format|
       if @ergo.update(ergo_params)
-        format.html { redirect_to @ergo, notice: 'Ergo was successfully updated.' }
-        format.json { head :no_content }
+        redirect_to @ergo, notice: 'Ergo was successfully updated.'
       else
-        format.html { render action: 'edit' }
-        format.json { render json: @ergo.errors, status: :unprocessable_entity }
+        render action: 'edit'
       end
     end
   end
 
-  # DELETE /ergos/1
-  # DELETE /ergos/1.json
   def destroy
     @ergo.destroy
     respond_to do |format|
-      format.html { redirect_to ergos_url }
-      format.json { head :no_content }
+      redirect_to ergos_url
     end
   end
 
