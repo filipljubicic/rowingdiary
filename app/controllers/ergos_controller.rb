@@ -9,20 +9,22 @@ class ErgosController < ApplicationController
   end
 
   def new
-    @ergo = Ergo.new
+    @ergo = current_user.ergo.build
   end
 
   def edit
   end
 
   def create
-    @ergo = Ergo.new(ergo_params)
+    @ergo = current_user.ergo.build(ergo_params)
 
     respond_to do |format|
       if @ergo.save
-        redirect_to @ergo, notice: 'Ergo was successfully created.'
+        format.html { redirect_to @ergo, notice: 'Ergo was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @ergo }
       else
-        render action: 'new'
+        format.html { render action: 'new' }
+        format.json { render json: @ergo.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -30,17 +32,21 @@ class ErgosController < ApplicationController
   def update
     respond_to do |format|
       if @ergo.update(ergo_params)
-        redirect_to @ergo, notice: 'Ergo was successfully updated.'
+        format.html { redirect_to @ergo, notice: 'Ergo was successfully updated.' }
+        format.json { head :no_content }
       else
-        render action: 'edit'
+        format.html { render action: 'edit' }
+        format.json { render json: @ergo.errors, status: :unprocessable_entity }
       end
     end
   end
 
+
   def destroy
     @ergo.destroy
     respond_to do |format|
-      redirect_to ergos_url
+      format.html { redirect_to ergos_url }
+      format.json { head :no_content }
     end
   end
 

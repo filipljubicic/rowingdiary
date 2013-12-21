@@ -11,14 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131221111224) do
+ActiveRecord::Schema.define(version: 20131221141908) do
 
   create_table "ergos", force: true do |t|
     t.string   "description"
     t.integer  "score"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
+
+  add_index "ergos", ["user_id"], name: "index_ergos_on_user_id"
 
   create_table "pins", force: true do |t|
     t.string   "description"
