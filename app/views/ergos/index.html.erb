@@ -5,6 +5,7 @@
     <tr>
       <th>Description</th>
       <th>Score</th>
+      <th>User</th>
       <th></th>
       <th></th>
       <th></th>
@@ -16,6 +17,7 @@
       <tr>
         <td><%= ergo.description %></td>
         <td><%= ergo.score %></td>
+        <td><%= ergo.user.email if ergo.user %></td>
         <td><%= link_to 'Show', ergo %></td>
         <td><%= link_to 'Edit', edit_ergo_path(ergo) %></td>
         <td><%= link_to 'Destroy', ergo, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,5 +1,6 @@
 class ErgosController < ApplicationController
   before_action :set_ergo, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :show, :edit, :destroy, :index]
 
   def index
     @ergos = Ergo.all
@@ -9,14 +10,14 @@ class ErgosController < ApplicationController
   end
 
   def new
-    @ergo = Ergo.new
+    @ergo = current_user.ergos.build
   end
 
   def edit
   end
 
   def create
-    @ergo = Ergo.new(ergo_params)
+    @ergo = current_user.ergos.build(ergo_params)
 
     respond_to do |format|
       if @ergo.save
