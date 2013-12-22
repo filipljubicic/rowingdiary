@@ -9,14 +9,14 @@ class ErgosController < ApplicationController
   end
 
   def new
-    @ergo = current_user.ergo.build
+    @ergo = Ergo.new
   end
 
   def edit
   end
 
   def create
-    @ergo = current_user.ergo.build(ergo_params)
+    @ergo = Ergo.new(ergo_params)
 
     respond_to do |format|
       if @ergo.save
