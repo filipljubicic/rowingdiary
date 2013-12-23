@@ -6,9 +6,23 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+	<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['rowingdiary.com', 'UA-17083858-9']);
+  //_gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
 </head>
 <body>
-
+	<% if Rails.env.production? %>
+  		<script>_gaq.push(['_trackPageview']);</script>
+	<% end %>
 	<%= render 'layouts/header' %>
 	<div class="container">
 		<% flash.each do |name, msg| %>
@@ -20,7 +34,7 @@
 
 <div id="footer">
       <div class="footer-style">
-        <p class="footer-text-muted">Made by Filip Ljubicic</p>
+        <p class="text-muted">Made by <%= link_to"@ljubicic", "http://www.twitter.com/ljubicic" %> </p>
       </div>
     </div>
 
