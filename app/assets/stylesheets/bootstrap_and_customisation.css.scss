@@ -17,3 +17,17 @@ $jumbotron-bg:                     white;
 .navbar-brand {
      font-weight: bold;
 }
+
+#footer {
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+.footer-style {
+  width: auto;
+  max-width: 680px;
+  padding: 0 15px;
+}
+.footer-style .text-muted {
+  margin: 20px 0;
+}
