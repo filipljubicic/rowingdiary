@@ -11,5 +11,8 @@
   <%= @ergo.score %>
 </p>
 </div>
-<%= link_to 'Edit', edit_ergo_path(@ergo) %> |
+
+<% if @ergo.user == current_user %>
+	<%= link_to 'Edit', edit_ergo_path(@ergo) %> |
+<% end %>
 <%= link_to 'Back', ergos_path %>

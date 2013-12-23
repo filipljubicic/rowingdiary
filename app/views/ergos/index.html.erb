@@ -1,4 +1,4 @@
-<h1>Listing ergos</h1>
+<h1>Ergo Scores</h1>
 
 <table>
   <thead>
@@ -19,13 +19,16 @@
         <td><%= ergo.score %></td>
         <td><%= ergo.user.email if ergo.user %></td>
         <td><%= link_to 'Show', ergo %></td>
-        <td><%= link_to 'Edit', edit_ergo_path(ergo) %></td>
-        <td><%= link_to 'Destroy', ergo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if ergo.user == current_user %>
+          <td><%= link_to 'Edit', edit_ergo_path(ergo) %></td>
+          <td><%= link_to 'Destroy', ergo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Ergo', new_ergo_path %>
+<% if user_signed_in? %>
+  <%= link_to 'New Ergo', new_ergo_path %>
+<% end %>
