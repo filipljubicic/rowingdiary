@@ -5,14 +5,35 @@
     <div class="panel panel-default">
       <div class="panel-heading center">
 		<p>
-		  <strong>Description:</strong>
+		  <strong>Notes:</strong>
 		  <%= @ergo.description %>
 		</p>
 
 		<p>
-		  <strong>Score:</strong>
-		  <%= @ergo.score %>
+		  <strong>Distance:</strong>
+		  <%= @ergo.distance %>
 		</p>
+
+		<p>
+		  <strong>Split:</strong>
+		  <%= @ergo.split %>
+		</p>
+
+		<p>
+		  <strong>Time:</strong>
+		  <%= @ergo.time %>
+		</p>
+
+		<p>
+		  <strong>Rate:</strong>
+		  <%= @ergo.rate %>
+		</p>
+
+		<p>
+		  <strong>Watts:</strong>
+		  <%= @ergo.watts %>
+		</p>
+
 		</div>
  		<div class="panel-body">
 		<% if @ergo.user == current_user %>

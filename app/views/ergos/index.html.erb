@@ -3,8 +3,8 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Description</th>
-      <th>Score</th>
+      <th>Notes</th>
+      <th>Split</th>
       <th>Created</th>
       <th></th>
       <th></th>
@@ -16,7 +16,7 @@
     <% current_user.ergos.each do |ergo| %>
       <tr>
         <td><%= ergo.description %></td>
-        <td><%= ergo.score %></td>
+        <td><%= ergo.split %></td>
         <td><%= ergo.created_at %></td>
         <td><%= link_to 'Show', ergo, class: "btn btn-info btn-xs" %></td>
         <% if ergo.user == current_user %>
