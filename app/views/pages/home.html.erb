@@ -1,11 +1,12 @@
 <div class="jumbotron center">
-     <h2>Welcome to Rowing Diary!</h2>
 
      <% if user_signed_in? %>
-     	<p>Record a score: <%= link_to 'New Session', new_ergo_path, class: "btn btn-success" %></p>
+     	<h3>Welcome back to Rowing Diary!</h3>
+     	<p>Record a new session: <%= link_to 'New Session', new_ergo_path, class: "btn btn-success" %></p>
+     	<p>View previous sessions: <%= link_to 'View', ergos_path, class: "btn btn-info" %></p>
     
      <% else %>
-
+     	<h2>Welcome to Rowing Diary!</h2>
      	<p>Manage your ergo scores online.</p>
      	<p><%= link_to "Log in", user_session_path, class: "btn btn-info btn-lg" %>
     	<%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>    

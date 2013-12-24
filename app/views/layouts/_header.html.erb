@@ -16,7 +16,9 @@
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
           <li><%= link_to "View Ergos", ergos_path %></li>
-          <li><%= link_to "Add Ergo Score", new_ergo_path %></li> 
+          <li>  <%= link_to new_ergo_path do %> <span class="glyphicon glyphicon-plus"></span> Ergo Score
+            <% end %>
+          </li> 
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret"></b></a>
           <ul class="dropdown-menu">  
