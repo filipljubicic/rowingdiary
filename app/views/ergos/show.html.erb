@@ -1,18 +1,25 @@
-<div class="jumbotron">
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @ergo.description %>
-</p>
+<div class="row">
+  <div class="col-md-offset-2 col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading center">
+		<p>
+		  <strong>Description:</strong>
+		  <%= @ergo.description %>
+		</p>
 
-<p>
-  <strong>Score:</strong>
-  <%= @ergo.score %>
-</p>
+		<p>
+		  <strong>Score:</strong>
+		  <%= @ergo.score %>
+		</p>
+		</div>
+ 		<div class="panel-body">
+		<% if @ergo.user == current_user %>
+			<%= link_to 'Edit', edit_ergo_path(@ergo), class: "btn btn-warning btn-xs" %> |
+		<% end %>
+		<%= link_to 'Back', ergos_path, class: "btn btn-info btn-xs" %>
+     </div>
+    </div>
+  </div>
 </div>
-
-<% if @ergo.user == current_user %>
-	<%= link_to 'Edit', edit_ergo_path(@ergo) %> |
-<% end %>
-<%= link_to 'Back', ergos_path %>
