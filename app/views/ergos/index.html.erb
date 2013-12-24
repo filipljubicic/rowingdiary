@@ -5,7 +5,7 @@
     <tr>
       <th>Description</th>
       <th>Score</th>
-      <th>User</th>
+      <th>Created</th>
       <th></th>
       <th></th>
       <th></th>
@@ -17,7 +17,7 @@
       <tr>
         <td><%= ergo.description %></td>
         <td><%= ergo.score %></td>
-        <td><%= ergo.user.email if ergo.user %></td>
+        <td><%= ergo.created_at %></td>
         <td><%= link_to 'Show', ergo, class: "btn btn-info btn-xs" %></td>
         <% if ergo.user == current_user %>
           <td><%= link_to 'Edit', edit_ergo_path(ergo), class: "btn btn-warning btn-xs" %></td>

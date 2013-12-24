@@ -4,7 +4,7 @@ class ErgosController < ApplicationController
   before_action :authenticate_user!, only: [:new, :show, :edit, :destroy, :index]
 
   def index
-    @ergos = Ergo.all
+    @ergos = Ergo.all.order(created_at: :desc)
   end
 
   def show
