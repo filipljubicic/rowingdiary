@@ -1,7 +1,7 @@
 class Ergo < ActiveRecord::Base
 	belongs_to :user
 
-  	validates :description, presence: true
+  	validates :notes, presence: true
   	validates :split, presence: true
   	validates :rate, presence: true
   	validates :distance, presence: true

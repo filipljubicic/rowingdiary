@@ -65,6 +65,6 @@ class ErgosController < ApplicationController
     
     # Never trust parameters from the scary internet, only allow the white list through.
     def ergo_params
-      params.require(:ergo).permit(:description, :score, :split, :rate, :watts, :distance, :time)
+      params.require(:ergo).permit(:description, :score, :split, :rate, :watts, :distance, :time, :notes)
     end
 end

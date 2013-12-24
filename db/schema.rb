@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131224225312) do
+ActiveRecord::Schema.define(version: 20131224231152) do
 
   create_table "ergos", force: true do |t|
     t.string   "description"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20131224225312) do
     t.integer  "rate"
     t.string   "split"
     t.string   "watts"
+    t.string   "notes"
   end
 
   add_index "ergos", ["user_id"], name: "index_ergos_on_user_id"
