@@ -1,0 +1,35 @@
+<h1>Listing weights</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Exercise</th>
+      <th>Reps</th>
+      <th>Weight</th>
+      <th>Sets</th>
+      <th>Notes</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% current_user.weights.each do |weight| %>
+      <tr>
+        <td><%= weight.exercise %></td>
+        <td><%= weight.reps %></td>
+        <td><%= weight.weight %></td>
+        <td><%= weight.sets %></td>
+        <td><%= weight.notes %></td>
+        <td><%= link_to 'Show', weight, class: "btn btn-info btn-xs" %></td>
+        <td><%= link_to 'Edit', edit_weight_path(weight), class: "btn btn-warning btn-xs" %></td>
+        <td><%= link_to 'Destroy', weight, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Weights Session', new_weight_path, class: "btn btn-success" %>

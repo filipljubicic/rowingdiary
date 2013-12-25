@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :ergos
+  has_many :weights
 
   validates :name, presence: true
   validates :club, presence: true

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131224231152) do
+ActiveRecord::Schema.define(version: 20131225183955) do
 
   create_table "ergos", force: true do |t|
     t.string   "description"
@@ -53,5 +53,19 @@ ActiveRecord::Schema.define(version: 20131224231152) do
   add_index "users", ["club"], name: "index_users_on_club"
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "weights", force: true do |t|
+    t.string   "exercise"
+    t.string   "reps"
+    t.string   "weight"
+    t.string   "sets"
+    t.text     "notes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
+  add_index "weights", ["exercise"], name: "index_weights_on_exercise"
+  add_index "weights", ["user_id"], name: "index_weights_on_user_id"
 
 end

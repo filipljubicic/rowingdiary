@@ -17,7 +17,7 @@ class ErgosController < ApplicationController
   def edit
   end
 
-  def create
+  def create 
     @ergo = current_user.ergos.build(ergo_params)
 
     respond_to do |format|

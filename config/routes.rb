@@ -1,4 +1,6 @@
 Rowingdiary::Application.routes.draw do
+  resources :weights
+
   resources :ergos
 
   devise_for :users

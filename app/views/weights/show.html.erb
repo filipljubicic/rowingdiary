@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="col-md-offset-2 col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading center">
+        <p>
+          <strong>Exercise:</strong>
+          <%= @weight.exercise %>
+        </p>
+
+        <p>
+          <strong>Reps:</strong>
+          <%= @weight.reps %>
+        </p>
+
+        <p>
+          <strong>Weight:</strong>
+          <%= @weight.weight %>
+        </p>
+
+        <p>
+          <strong>Sets:</strong>
+          <%= @weight.sets %>
+        </p>
+
+        <p>
+          <strong>Notes:</strong>
+          <%= @weight.notes %>
+        </p>
+        </div>
+          <%= link_to 'Edit', edit_weight_path(@weight), class: "btn btn-warning btn-xs" %> |
+          <%= link_to 'Back', weights_path %>
+      </div>
+    </div>
+  </div>
+</div>
