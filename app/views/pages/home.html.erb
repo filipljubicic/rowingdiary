@@ -1,17 +1,52 @@
 <div class="jumbotron center">
 
      <% if user_signed_in? %>
-     	<p>Record a new ergo session: <%= link_to 'New ergo', new_ergo_path, class: "btn btn-success" %></p>
-     	<p>View previous sessions: <%= link_to 'View', ergos_path, class: "btn btn-info" %></p>
+     	<p>Record a new session: <%= link_to 'Ergo', new_ergo_path, class: "btn btn-success" %> <%= link_to 'Weights', new_weight_path, class: "btn btn-warning" %></p>
+     	<p>View previous sessions: <%= link_to 'Ergos', ergos_path, class: "btn btn-info" %> <%= link_to 'Weights', weights_path, class: "btn btn-info" %></p>
 
     <table class="table table-striped">
-  <thead>
+    <h3>Ergos Sessions</h3>
+    <thead>
+        <tr>
+          <th>Distance</th>
+          <th>Split</th>
+          <th>Time</th>
+          <th>Notes</th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+    </thead>
+
+      <tbody>
+        <% current_user.ergos.each do |ergo| %>
+          <tr>
+            <td><%= ergo.distance %></td>
+            <td><%= ergo.split %></td>
+            <td><%= ergo.time %></td>
+            <td><%= ergo.notes %></td>
+            <td><%= ergo.created_at.strftime("%d %b %Y") %></td>
+            <td><%= link_to 'Show', ergo, class: "btn btn-info btn-xs" %></td>
+            <% if ergo.user == current_user %>
+              <td><%= link_to 'Edit', edit_ergo_path(ergo), class: "btn btn-warning btn-xs" %></td>
+              <td><%= link_to 'Destroy', ergo, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %></td>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+<table class="table table-striped">
+        <h3>Weights Sessions</h3>
+    <thead>
+        <thead>
     <tr>
-      <th>Distance</th>
-      <th>Split</th>
-      <th>Time</th>
+      <th>Exercise</th>
+      <th>Reps</th>
+      <th>Weight</th>
+      <th>Sets</th>
       <th>Notes</th>
-      <th>Created</th>
+      <th></th>
       <th></th>
       <th></th>
       <th></th>
@@ -19,30 +54,28 @@
   </thead>
 
   <tbody>
-    <% current_user.ergos.each do |ergo| %>
+    <% current_user.weights.each do |weight| %>
       <tr>
-        <td><%= ergo.distance %></td>
-        <td><%= ergo.split %></td>
-        <td><%= ergo.time %></td>
-        <td><%= ergo.notes %></td>
-        <td><%= ergo.created_at.strftime("%d %b %Y") %></td>
-        <td><%= link_to 'Show', ergo, class: "btn btn-info btn-xs" %></td>
-        <% if ergo.user == current_user %>
-          <td><%= link_to 'Edit', edit_ergo_path(ergo), class: "btn btn-warning btn-xs" %></td>
-          <td><%= link_to 'Destroy', ergo, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %></td>
-        <% end %>
+        <td><%= weight.exercise %></td>
+        <td><%= weight.reps %></td>
+        <td><%= weight.weight %></td>
+        <td><%= weight.sets %></td>
+        <td><%= weight.notes %></td>
+        <td><%= weight.created_at.strftime("%d %b %Y") %></td>
+        <td><%= link_to 'Show', weight, class: "btn btn-info btn-xs" %></td>
+        <td><%= link_to 'Edit', edit_weight_path(weight), class: "btn btn-warning btn-xs" %></td>
+        <td><%= link_to 'Destroy', weight, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-    
-     <% else %>
-     	<h2>Welcome to Rowing Diary!</h2>
-     	<p>Manage your ergo scores online.</p>
-     	<p><%= link_to "Log in", user_session_path, class: "btn btn-info btn-lg" %>
-    	<%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>    
+         <% else %>
+         	<h2>Welcome to Rowing Diary!</h2>
+         	<p>Manage your ergo scores online.</p>
+         	<p><%= link_to "Log in", user_session_path, class: "btn btn-info btn-lg" %>
+        	<%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>    
 
-  	<% end %>
+      	<% end %>
 
 </div>

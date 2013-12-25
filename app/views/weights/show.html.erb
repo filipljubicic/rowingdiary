@@ -29,8 +29,11 @@
           <%= @weight.notes %>
         </p>
         </div>
+        <div class="panel-body">
+          <% if @weight.user == current_user %>
           <%= link_to 'Edit', edit_weight_path(@weight), class: "btn btn-warning btn-xs" %> |
-          <%= link_to 'Back', weights_path %>
+          <% end %>
+          <%= link_to 'View All', weights_path, class: "btn btn-info btn-xs" %>
       </div>
     </div>
   </div>
