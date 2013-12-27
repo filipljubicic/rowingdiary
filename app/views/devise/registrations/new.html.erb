@@ -1,39 +1,111 @@
+<h2>Sign up</h2><p>14 day free trial then $9.99 per year.</p>
+</div>
 
-<div class="panel panel-default">
-	<div class="panel-heading">
-		<h2>Sign up</h2>
-	</div>
+	<div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-4">
+        <div class="panel panel-default">
+  		    <div class="panel-heading">
+            <h3 class="panel-title">Account Details</h3>
+        </div>
+        <div class="panel-body">
+        <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+    		<%= devise_error_messages! %>
 
-	<div class="panel-body">
-		<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  		<%= devise_error_messages! %>
+        <%= f.hidden_field :stripe_card_token %>
+        
+          <form role="form">
+          <div id='stripe_error' class="alert alert-info" style='display:none'>
+          </div>
+          <div class="form-group">
+            <%= f.label :name %>
+            <%= f.text_field :name, autofocus: true, class: "form-control" %>
+          </div>
 
-      <div class="form-group">
-        <%= f.label :name %>
-        <%= f.text_field :name, autofocus: true, class: "form-control" %>
-      </div>
+          <div class="form-group">
+            <%= f.label :club %>
+            <%= f.text_field :club, autofocus: true, class: "form-control" %>
+          </div>
 
-      <div class="form-group">
-        <%= f.label :club %>
-        <%= f.text_field :club, autofocus: true, class: "form-control" %>
-      </div>
+      		<div class="form-group">
+      			<%= f.label :email %>
+      			<%=	f.email_field :email, :autofocus => true, class: "form-control" %>
+    		  </div>
 
-  		<div class="form-group">
-  			<%= f.label :email %>
-  			<%=	f.email_field :email, :autofocus => true, class: "form-control" %>
-		</div>
+      		<div class="form-group">
+      			<%= f.label :password %><br />
+      			<%= f.password_field :password, class: "form-control" %>
+      		</div>
+          <div class="form-group">
+         <%= f.submit "Sign up and pay", class: "btn btn-success" %>
+          </div>
+          </div>
+        </div>
+        </div>
 
-  		<div class="form-group">
-  			<%= f.label :password %><br />
-  			<%= f.password_field :password, class: "form-control" %>
-  		</div>
+      <% if @user.stripe_card_token.present? %>
+        Credit Card is on File
+      <% else %>
 
+        <div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Payment Details
+                    </h3>
+                  </br>
+                    <ul class="nav nav-pills nav-stacked">
+                        <li class="active"><span class="badge pull-right"><span class="glyphicon glyphicon-usd"></span>9.99</span> Annual Payment</a>
+                        </li>
+                      </ul>
+                </div>
+                <div class="panel-body">
+                    <form role="form">
+                    <div class="form-group">
+                        <label for="cardNumber">
+                            CARD NUMBER</label>
+                        <div class="input-group">
+                            <%= text_field_tag :card_number, nil, name: nil, class: 'form-control' %>
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-7 col-md-7">
+                            <div class="form-group">
+                                <label for="expityMonth">
+                                    EXPIRY DATE</label>
+                                <div class="col-xs-6 col-lg-6 pl-ziro">
+                                    <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month"} %>
+                                </div>
+                                <div class="col-xs-6 col-lg-6 pl-ziro">
+                                    <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year"} %>
+                            </div>
+                        </div>
+                        </br>
+                      </div>
 
-  		<div class="form-group">
-  			<%= f.submit "Sign up", class: "btn btn-primary" %>
-  		</div>
-  	</div>
-<% end %>
+                        <div class="col-xs-7 col-md-7">
+                            <div class="form-group">
+                                <label for="cvCode">
+                                    CV CODE</label>
+                                <%= text_field_tag :card_code, nil, name: nil %>
+                            </div>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+          </br>
+        </div>
+    </div>
+
+        
+      <% end %>
+
+  		
+    <% end %>
 <div class="panel-footer">
 	<%= render "devise/shared/links" %>
 </div>

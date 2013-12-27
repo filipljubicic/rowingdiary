@@ -1,7 +1,7 @@
 Rowingdiary::Application.routes.draw do
   resources :weights
-
   resources :ergos
+  resources :charges
 
   devise_for :users
   root "pages#home"

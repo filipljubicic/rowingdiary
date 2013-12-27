@@ -7,11 +7,12 @@ class ApplicationController < ActionController::Base
 protected
 
  def configure_permitted_parameters
-   devise_parameter_sanitizer.for(:sign_up) << :name
-   devise_parameter_sanitizer.for(:account_update) << :name
-	devise_parameter_sanitizer.for(:sign_up) << :club
-   	devise_parameter_sanitizer.for(:account_update) << :club
+ 	devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name, :club, :stripe_card_token, :email, :password) }
+  	devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:name, :club, :stripe_card_token) }
+
  end
+
+ 
 end
 
 #def create
