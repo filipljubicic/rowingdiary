@@ -27,10 +27,10 @@
             <td><%= ergo.time %></td>
             <td><%= ergo.notes %></td>
             <td><%= ergo.created_at.strftime("%d %b %Y") %></td>
-            <td><%= link_to 'Show', ergo, class: "btn btn-info btn-xs" %></td>
+            <td><%= link_to '', ergo, class: "glyphicon glyphicon-zoom-in" %></td>
             <% if ergo.user == current_user %>
-              <td><%= link_to 'Edit', edit_ergo_path(ergo), class: "glyphicon glyphicon-pencil" %></td>
-              <td><%= link_to 'Destroy', ergo, method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-trash" %></td>
+              <td><%= link_to '', edit_ergo_path(ergo), class: "glyphicon glyphicon-pencil" %></td>
+              <td><%= link_to '', ergo, method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-trash" %></td>
             <% end %>
           </tr>
         <% end %>
@@ -62,9 +62,9 @@
         <td><%= weight.sets %></td>
         <td><%= weight.notes %></td>
         <td><%= weight.created_at.strftime("%d %b %Y") %></td>
-        <td><%= link_to 'Show', weight, class: "btn btn-info btn-xs" %></td>
-        <td><%= link_to 'Edit', edit_weight_path(weight), class: "btn btn-warning btn-xs" %></td>
-        <td><%= link_to 'Destroy', weight, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %></td>
+        <td><%= link_to '', weight, class: "glyphicon glyphicon-zoom-in" %></td>
+        <td><%= link_to '', edit_weight_path(weight), class: "glyphicon glyphicon-pencil" %></td>
+        <td><%= link_to '', weight, method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-trash" %></td>
       </tr>
     <% end %>
   </tbody>

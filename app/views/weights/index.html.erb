@@ -22,9 +22,9 @@
         <td><%= weight.weight %></td>
         <td><%= weight.sets %></td>
         <td><%= weight.notes %></td>
-        <td><%= link_to 'Show', weight, class: "btn btn-info btn-xs" %></td>
-        <td><%= link_to 'Edit', edit_weight_path(weight), class: "btn btn-warning btn-xs" %></td>
-        <td><%= link_to 'Destroy', weight, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %></td>
+        <td><%= link_to '', weight, class: "glyphicon glyphicon-zoom-in" %></td>
+        <td><%= link_to '', edit_weight_path(weight), class: "glyphicon glyphicon-pencil" %></td>
+        <td><%= link_to '', weight, method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-trash" %></td>
       </tr>
     <% end %>
   </tbody>

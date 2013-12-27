@@ -6,7 +6,7 @@ class WeightsController < ApplicationController
   # GET /weights
   # GET /weights.json
   def index
-    @weights = Weight.all
+    @weights = Weight.all.order(created_at: :desc)
   end
 
   def show

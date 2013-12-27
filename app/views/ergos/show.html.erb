@@ -1,45 +1,51 @@
 <p id="notice"><%= notice %></p>
 
-<div class="row">
-  <div class="col-md-offset-2 col-md-8">
-    <div class="panel panel-default">
-      <div class="panel-heading center">
-		<p>
-		  <strong>Notes:</strong>
-		  <%= @ergo.notes %>
-		</p>
+<div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-4">
+        <div class="panel panel-default">
+  		    <div class="panel-heading">
+            <h1 class="panel-title">View Ergo</h1>
+        </div>
+        <div class="panel-body">
+		
 
-		<p>
+		<h3>
 		  <strong>Distance:</strong>
 		  <%= @ergo.distance %>
-		</p>
+		</h3>
 
-		<p>
+		<h3>
 		  <strong>Split:</strong>
 		  <%= @ergo.split %>
-		</p>
+		</h3>
 
-		<p>
+		<h3>
 		  <strong>Time:</strong>
 		  <%= @ergo.time %>
-		</p>
+		</h3>
 
-		<p>
+		<h3>
 		  <strong>Rate:</strong>
 		  <%= @ergo.rate %>
-		</p>
+		</h3>
 
-		<p>
+		<h3>
 		  <strong>Watts:</strong>
 		  <%= @ergo.watts %>
-		</p>
+		</h3>
+
+		<h3>
+		  <strong>Notes:</strong>
+		  <%= @ergo.notes %>
+		</h3>
 
 		</div>
  		<div class="panel-body">
 		<% if @ergo.user == current_user %>
-			<%= link_to 'Edit', edit_ergo_path(@ergo), class: "btn btn-warning btn-xs" %> |
+			<%= link_to 'Edit', edit_ergo_path(@ergo), class: "btn btn-warning btn" %> |
 		<% end %>
-		<%= link_to 'View All', ergos_path, class: "btn btn-info btn-xs" %>
+		<%= link_to 'View All', ergos_path, class: "btn btn-info btn" %>
      </div>
     </div>
   </div>
