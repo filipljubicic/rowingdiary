@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   validates :club, presence: true
 
   after_create :create_a_customer
+  after_create :send_welcome_email
 
   def create_a_customer
           token = self.stripe_card_token
@@ -18,11 +19,17 @@ class User < ActiveRecord::Base
           customer = Stripe::Customer.create(
           :card => token,
           :plan => 1972,
-          :coupon => coupon,
+          :id => coupon,
           :email => self.email
       )         
 
          end
+
+private
+
+ def send_welcome_email
+ WelcomeMailer.welcome_email(self).deliver
+end
 
 
   #attr_accessible :avatar

@@ -1,4 +1,4 @@
-<h2>Sign up</h2><p>14 day free trial then $9.99 per year.</p>
+<h2>Sign up - 14 day free trial then $9.99 per year.</h2>
 </div>
 
 	<div class="container">
@@ -36,9 +36,6 @@
       			<%= f.label :password %><br />
       			<%= f.password_field :password, class: "form-control" %>
       		</div>
-          <div class="form-group">
-         <%= f.submit "Sign up and pay", class: "btn btn-success" %>
-          </div>
           </div>
         </div>
         </div>
@@ -78,7 +75,7 @@
                                     EXPIRY DATE</label>
                                 <div class="col-xs-6 col-lg-6 pl-ziro">
                                     <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month"} %>
-                                </div>
+                                </div><br/>
                                 <div class="col-xs-6 col-lg-6 pl-ziro">
                                     <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year"} %>
                             </div>
@@ -93,15 +90,13 @@
                                 <%= text_field_tag :card_code, nil, name: nil %>
                             </div>
                         </div>
-                        <div class="col-xs-7 col-md-7">
-                            <div class="form-group">
-                                <label for="Coupon">
-                                    COUPON</label>
-                                <%= text_field_tag :coupon, nil, name: nil %>
-                            </div>
-                        </div>
+                        
                     </div>
+                    <div class="form-group">
+         <%= f.submit "Sign up and pay", class: "btn btn-success" %>
+          </div>
                     </form>
+
                 </div>
             </div>
           </br>
