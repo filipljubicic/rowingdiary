@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131227120217) do
+ActiveRecord::Schema.define(version: 20131228002609) do
 
   create_table "ergos", force: true do |t|
     t.string   "description"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20131227120217) do
     t.boolean  "subscribed",             default: false
     t.string   "stripeid"
     t.string   "stripe_card_token"
+    t.string   "coupon"
   end
 
   add_index "users", ["club"], name: "index_users_on_club"
