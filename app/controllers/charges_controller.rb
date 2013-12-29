@@ -1,4 +1,4 @@
-class ChargesController < ApplicationController
+raclass ChargesController < ApplicationController
 	before_filter :authenticate_user!
 
 def new
@@ -30,5 +30,5 @@ def create
 
 rescue Stripe::CardError => e
   flash[:error] = e.message
-  redirect_to charges_path
+  redirect_to charges_path notice: "Not authorized to edit this pin" if @card.nil?
 end
