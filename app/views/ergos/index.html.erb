@@ -24,7 +24,7 @@
         <td><%= ergo.created_at.strftime("%d %b %Y") %></td>
         <td><%= link_to '', ergo, class: "glyphicon glyphicon-zoom-in" %></td>
         <% if ergo.user == current_user %>
-          <td><%= link_to '', edit_ergo_path(ergo), class: "glyphicon glyphicon-plus" %></td>
+          <td><%= link_to '', edit_ergo_path(ergo), class: "glyphicon glyphicon-pencil" %></td>
           <td><%= link_to '', ergo, method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-trash" %></td>
         <% end %>
       </tr>
