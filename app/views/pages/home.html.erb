@@ -1,6 +1,8 @@
+<% if user_signed_in? %>
+
 <div class="jumbotron center">
 
-     <% if user_signed_in? %>
+    
      	<p>Record a new session: <%= link_to 'Ergo', new_ergo_path, class: "btn btn-success" %> <%= link_to 'Weights', new_weight_path, class: "btn btn-warning" %></p>
      	<p>View previous sessions: <%= link_to 'Ergos', ergos_path, class: "btn btn-info" %> <%= link_to 'Weights', weights_path, class: "btn btn-info" %></p>
 </div>
@@ -71,6 +73,33 @@
 </table>
 
          <% else %>
+
+          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="../assets/images/1.jpg" alt="...">
+      <div class="carousel-caption">
+      </div>
+    </div>
+    
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
          	<h2>Welcome to Rowing Diary!</h2>
          	<p>Manage your ergo scores online.</p>
          	<p><%= link_to "Log in", user_session_path, class: "btn btn-info btn-lg" %>
