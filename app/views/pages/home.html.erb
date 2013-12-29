@@ -7,34 +7,34 @@
     <table class="table table-striped">
     <h3>Ergos Sessions</h3>
     <thead>
-        <tr>
-          <th>Distance</th>
-          <th>Split</th>
-          <th>Time</th>
-          <th>Notes</th>
-          <th></th>
-          <th></th>
-          <th></th>
-          <th></th>
-        </tr>
-    </thead>
+    <tr>
+      <th>Distance</th>
+      <th>Split</th>
+      <th>Time</th>
+      <th>Notes</th>
+      <th>Created</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
 
       <tbody>
-        <% current_user.ergos.each do |ergo| %>
-          <tr>
-            <td><%= ergo.distance %></td>
-            <td><%= ergo.split %></td>
-            <td><%= ergo.time %></td>
-            <td><%= ergo.notes %></td>
-            <td><%= ergo.created_at.strftime("%d %b %Y") %></td>
-            <td><%= link_to '', ergo, class: "glyphicon glyphicon-zoom-in" %></td>
-            <% if ergo.user == current_user %>
-              <td><%= link_to '', edit_ergo_path(ergo), class: "glyphicon glyphicon-pencil" %></td>
-              <td><%= link_to '', ergo, method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-trash" %></td>
-            <% end %>
-          </tr>
+    <% current_user.ergos.each do |ergo| %>
+      <tr>
+        <td><%= ergo.distance %></td>
+        <td><%= ergo.split %></td>
+        <td><%= ergo.time %></td>
+        <td><%= ergo.notes %></td>
+        <td><%= ergo.created_at.strftime("%d %b %Y") %></td>
+        <td><%= link_to '', ergo, class: "glyphicon glyphicon-zoom-in" %></td>
+        <% if ergo.user == current_user %>
+          <td><%= link_to '', edit_ergo_path(ergo), class: "glyphicon glyphicon-plus" %></td>
+          <td><%= link_to '', ergo, method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-trash" %></td>
         <% end %>
-      </tbody>
+      </tr>
+    <% end %>
+  </tbody>
     </table>
 <table class="table table-striped">
         <h3>Weights Sessions</h3>
