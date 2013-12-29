@@ -13,10 +13,12 @@ gem 'bootstrap-sass', github: 'twbs/bootstrap-sass', branch: 'master'
 gem 'devise', '~> 3.2.2'
 gem 'paperclip', '~> 3.0'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem 'seed_dump'
 
 group :development, :test do
 	gem 'sqlite3'
 	gem 'foreman'
+	gem 'pg'
 end
 
 group :production do
