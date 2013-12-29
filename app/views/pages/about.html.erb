@@ -1,5 +1,48 @@
-<div class="jumbotron center">
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+  <div class="container">
+  <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "Rowing Diary", root_path, class: "navbar-brand" %>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-right">
+
+<li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "About", about_path %></li> 
+          <!--<li><%= link_to "Pricing", pricing_path %></li>-->
+          <li><%= link_to "Sign up", new_user_registration_path %></li>
+		</ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- container -->
+</nav>
+<div class="jumbotron">
      <h2>About Rowing Diary</h2>
-     <p>Rowing Diary is a website for Rowers to record and manage their progress.
-  </p>    
+     <p>Rowing Diary is the easiest and simplest way to manage all your rowing training data. It's been built by rowers for rowers.</p>
+     <p>Our approach to building rowing diary was that as elite athletes we had everything stored in books. However with smartphones this changed everything. We wanted something more to help us analyse our own performance. So we built rowing diary to help ourselves and now for the rest of the rowing community.</p>
+     <p>Why choose rowing diary? Over the years many coaches have been using google docs as their method to track our performance. For us this didn't work. We wanted something more for ourselves, a tool that allowed us to track and analyse our own progress and performance.</p>
+     <p>We've built Rowing Diary to track elements of training we felt are truley important to elite athletes.</p>
+
+	 
+	 <p>1. Ergo sessions</p>
+	 <p>2. Weights session</p>
+	 <p>3. Water sessions - (coming soon)</p>
+	 <p>4. Morning monitoring- (coming soon)</p>
+
+	<p>These four areas will give you enough feedback on your performance to help you make the most put of the next session.</p>
+
+	<p>Sign up today and receive a 50% discount.</p>
+
+	<p>If you have any questions about Rowing Diary please feel free to contact us at question@rowingdiary.com</p>   
 </div>
+<footer>
+        <p class="text-center">
+        <p>© 2013 Rowing Diary · <a href="/">Home</a></p><!--<a href="#">Privacy</a> · <a href="#">Terms</a></p>-->
+      </footer>

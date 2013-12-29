@@ -73,7 +73,7 @@
 </table>
 
          <% else %>
-
+<div class="container-carousel">
           <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -88,7 +88,7 @@
       <div class="active item"><img src='http://filipljubicic.com/wp-content/uploads/2013/12/5.jpg'></div> 
       <div class="carousel-caption">
         <h1>Your Online Rowing Diary</h1>
-              <p class="lead"></p>
+              <p class="lead"></p><%= link_to "Log in", user_session_path, class: "btn btn-large btn-info" %> 
               <%= link_to "Sign up today", new_user_registration_path, class: "btn btn-large btn-primary" %>
       </div>
     </div>
@@ -96,7 +96,7 @@
       <div class="item"><img src='http://filipljubicic.com/wp-content/uploads/2013/12/3.jpg'></div>
       <div class="carousel-caption">
         <h1>Put yourself in the lead.</h1>
-              <p class="lead">Rowing Diary allows you to store and view all your training data online.</p>
+              <p class="lead">Rowing Diary allows you to store and view all your training data online. Record your ergo, weights and water sessions on our simple platform.</p><%= link_to "Log in", user_session_path, class: "btn btn-large btn-info" %> 
               <%= link_to "Sign up today", new_user_registration_path, class: "btn btn-large btn-primary" %>
       </div>
     </div>
@@ -109,7 +109,7 @@
               
       </div>
     </div>  
-  
+    
   </div>
 
   <!-- Controls -->
@@ -120,4 +120,29 @@
     <span class="glyphicon glyphicon-chevron-right"></span>
   </a>
 </div>
+</div><!--
+<!--<div class="container marketing">
+
+      <!-- Three columns of text below the carousel
+      <div class="col-xs-6 col-md-6">
+        <div class="span4">
+          <img class="img-circle" data-src="holder.js/140x140" alt="140x140" style="width: 140px; height: 140px;" src="d">
+          <h2>Unlimited Storage</h2>
+          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+          <p><a class="btn" href="#">View details »</a></p>
+        </div><!-- /.span4
+      </div>
+        <div class="col-xs-6 col-md-4">        
+          <img class="img-circle" data-src="holder.js/140x140" alt="140x140" style="width: 140px; height: 140px;" src="">
+          <h2>Free 14 day trial</h2>
+          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a class="btn" href="#">View details »</a></p>
+      </div>
+      <!--</div>--><!-- /.row -->
 <% end %>
+</div>
+<!-- FOOTER -->
+      <footer>
+        <p class="text-center">
+        <p>© 2013 Rowing Diary · <a href="/about">About</a></p><!--<a href="#">Privacy</a> · <a href="#">Terms</a></p>-->
+      </footer>
