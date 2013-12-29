@@ -60,7 +60,7 @@ class ErgosController < ApplicationController
 
     def correct_user
       @ergo = current_user.ergos.find_by(id: params[:id])
-      redirect_to ergos_path, notice: "Not authorized to edit this pin" if @ergo.nil?
+      redirect_to ergos_path, notice: "Not authorized to edit this" if @ergo.nil?
     end
     
     # Never trust parameters from the scary internet, only allow the white list through.

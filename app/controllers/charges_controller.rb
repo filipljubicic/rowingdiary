@@ -14,19 +14,19 @@ def create
 	    
   )
 
-	Stripe::Plan.create(
-	  :amount => 999,
-	  :interval => 'year',
-	  :name => 'Individual',
-	  :currency => 'usd',
-	  :id => '1972'
-	)
+	#Stripe::Plan.create(
+	#  :amount => 999,
+	#  :interval => 'year',
+	#  :name => 'Individual',
+	#  :currency => 'usd',
+	#  :id => '1972'
+	#)
 
-	Stripe::Coupon.create(
-  		:percent_off => 100,
-  		:duration => 'once',
-  		:id => '1988'
-)
+	#Stripe::Coupon.create(
+  	#	:percent_off => 100,
+  	#	:duration => 'once',
+  	#	:id => '1988'
+#)
 
 rescue Stripe::CardError => e
   flash[:error] = e.message

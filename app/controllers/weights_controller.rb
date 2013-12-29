@@ -65,7 +65,7 @@ class WeightsController < ApplicationController
 
     def correct_user
       @weight = current_user.weights.find_by(id: params[:id])
-      redirect_to weights_path, notice: "Not authorized to edit this pin" if @weight.nil?
+      redirect_to weights_path, notice: "Not authorized to edit this" if @weight.nil?
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
