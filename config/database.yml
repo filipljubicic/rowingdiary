@@ -33,6 +33,6 @@ production:
   database: daajvp5eiianrd
   pool: 5432
   timeout: 5000
-  password: ENV['DB_PASSWORD']
+  password: gN_g3PZGFgZlD-vW6tvtoaWuvm
   user: sqpcejiqjlzzyj
   host: ec2-54-204-42-178.compute-1.amazonaws.com
