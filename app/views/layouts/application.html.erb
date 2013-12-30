@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Rowing Diary</title>
-  <meta name="description" content="Manage and store all your ergo data in one safe and secure place.">
-  <meta name="keyword" content="rowing,crew,data,ergo,store,save,diary,rowing diary">
+  <title>Rowing Diary - Your online training diary</title>
+  <meta name="description" content="Rowing Diary is the easiest and simplest way to manage all your rowing training data. It's been built by rowers for rowers.">
+  <meta name="keyword" content="rowing,crew,data,ergo,store,save,diary,rowing diary,training,">
   <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -19,6 +19,13 @@
   ga('create', 'UA-17083858-9', 'rowingdiary.com');
   ga('send', 'pageview');
   </script>
+  <script type="text/javascript">
+  (function() {
+    var po = document.createElement("script"); po.type = "text/javascript"; po.async = true;
+    po.src = "https://apis.google.com/js/plusone.js?publisherid=107831267695253167224";
+    var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
   <script>
 $(function(){
   $('#myCarousel').carousel();
