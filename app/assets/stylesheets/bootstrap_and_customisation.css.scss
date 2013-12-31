@@ -289,11 +289,12 @@ padding-left: 0px;
 padding-right: 0px;
 }
 
-  .container:before, .container:after {
+.container:before, .container:after {
     content: " ";
     display: table; 
 }
-  .container:after {
+
+.container:after {
     clear: both; 
 }
   @media (min-width: 768px) {
@@ -306,4 +307,12 @@ padding-right: 0px;
     .container {
       width: 1280px; 
   } }
+
+  .kutija{
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+
+  }
 

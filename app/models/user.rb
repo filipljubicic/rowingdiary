@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
           
           customer = Stripe::Customer.create(
           :card => token,
-          :plan => 1972,
+          :plan => 2000,
           :id => coupon,
           :email => self.email
       )         

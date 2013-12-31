@@ -15,11 +15,12 @@ def create
   )
 
 	Stripe::Plan.create(
-	  :amount => 999,
-	  :interval => 'year',
+	  :amount => 250,
+	  :interval => 'month',
+	  :interval_count => '3',
 	  :name => 'Individual',
 	  :currency => 'usd',
-	  :id => '1972'
+	  :id => '2000'
 	)
 
 	Stripe::Coupon.create(
