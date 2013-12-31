@@ -1,10 +1,12 @@
 <% if user_signed_in? %>
-
+<div class="kutija">
 <div class="jumbotron center">
 
     
-     	<p>Record a new session: <%= link_to 'Ergo', new_ergo_path, class: "btn btn-success" %> <%= link_to 'Weights', new_weight_path, class: "btn btn-warning" %></p>
-     	<p>View previous sessions: <%= link_to 'Ergos', ergos_path, class: "btn btn-info" %> <%= link_to 'Weights', weights_path, class: "btn btn-info" %></p>
+     	<p>Record a new session:</p>
+        <%= link_to 'Ergo', new_ergo_path, class: "btn btn-success" %> <%= link_to 'Weights', new_weight_path, class: "btn btn-warning" %></p>
+     	<p>View previous sessions:</p> 
+      <%= link_to 'Ergos', ergos_path, class: "btn btn-info" %> <%= link_to 'Weights', weights_path, class: "btn btn-info" %>
 </div>
     <table class="table table-striped">
     <h3>Ergos Sessions</h3>
