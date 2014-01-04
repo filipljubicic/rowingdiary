@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  stripe_id: MyString
+  price: 1.5
+  interval: MyString
+  features: MyText
+  highlight: false
+  display_order: 1
+
+two:
+  name: MyString
+  stripe_id: MyString
+  price: 1.5
+  interval: MyString
+  features: MyText
+  highlight: false
+  display_order: 1

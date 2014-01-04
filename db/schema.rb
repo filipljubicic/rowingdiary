@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131228002609) do
+ActiveRecord::Schema.define(version: 20140104160011) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "coupons", force: true do |t|
+    t.string   "code"
+    t.string   "free_trial_length"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "ergos", force: true do |t|
     t.string   "description"
@@ -31,6 +38,37 @@ ActiveRecord::Schema.define(version: 20131228002609) do
   end
 
   add_index "ergos", ["user_id"], name: "index_ergos_on_user_id", using: :btree
+
+  create_table "plans", force: true do |t|
+    t.string   "name"
+    t.string   "stripe_id"
+    t.float    "price"
+    t.string   "interval"
+    t.text     "features"
+    t.boolean  "highlight"
+    t.integer  "display_order"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "stripe_events", force: true do |t|
+    t.string   "stripe_id"
+    t.string   "stripe_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "subscriptions", force: true do |t|
+    t.string   "stripe_id"
+    t.integer  "plan_id"
+    t.string   "last_four"
+    t.integer  "coupon_id"
+    t.string   "card_type"
+    t.float    "current_price"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",    null: false

@@ -14,6 +14,7 @@ gem 'devise', '~> 3.2.2'
 gem 'paperclip', '~> 3.0'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'seed_dump'
+gem 'koudoku'
 
 group :development, :test do
 	gem 'sqlite3'

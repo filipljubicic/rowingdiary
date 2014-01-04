@@ -1,7 +1,11 @@
 Rowingdiary::Application.routes.draw do
+
+
   resources :weights
   resources :ergos
   resources :charges
+
+  resources :stripe_events, only: [:create]
 
   devise_for :users
   root "pages#home"

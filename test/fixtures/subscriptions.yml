@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  stripe_id: MyString
+  plan_id: 1
+  last_four: MyString
+  coupon_id: 1
+  card_type: MyString
+  current_price: 1.5
+  user_id: 1
+
+two:
+  stripe_id: MyString
+  plan_id: 1
+  last_four: MyString
+  coupon_id: 1
+  card_type: MyString
+  current_price: 1.5
+  user_id: 1
