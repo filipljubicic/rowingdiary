@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  distance: MyString
+  BoatType: MyString
+  SessionDescription: MyString
+  crew: MyString
+  notes: MyString
+
+two:
+  distance: MyString
+  BoatType: MyString
+  SessionDescription: MyString
+  crew: MyString
+  notes: MyString

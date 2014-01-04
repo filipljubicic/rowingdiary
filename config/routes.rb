@@ -1,6 +1,12 @@
 Rowingdiary::Application.routes.draw do
 
 
+  resources :morning_monitorings
+
+  resources :waters
+
+  resources :pbs
+
   resources :weights
   resources :ergos
   resources :charges

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  hr: 1
+  sleep: 1
+  notes: MyString
+
+two:
+  hr: 1
+  sleep: 1
+  notes: MyString

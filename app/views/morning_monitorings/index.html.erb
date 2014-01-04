@@ -1,0 +1,31 @@
+<h1>Listing morning_monitorings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Hr</th>
+      <th>Sleep</th>
+      <th>Notes</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @morning_monitorings.each do |morning_monitoring| %>
+      <tr>
+        <td><%= morning_monitoring.hr %></td>
+        <td><%= morning_monitoring.sleep %></td>
+        <td><%= morning_monitoring.notes %></td>
+        <td><%= link_to 'Show', morning_monitoring %></td>
+        <td><%= link_to 'Edit', edit_morning_monitoring_path(morning_monitoring) %></td>
+        <td><%= link_to 'Destroy', morning_monitoring, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Morning monitoring', new_morning_monitoring_path %>

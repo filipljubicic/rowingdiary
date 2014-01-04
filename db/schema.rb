@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140104160011) do
+ActiveRecord::Schema.define(version: 20140104194535) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,25 @@ ActiveRecord::Schema.define(version: 20140104160011) do
   end
 
   add_index "ergos", ["user_id"], name: "index_ergos_on_user_id", using: :btree
+
+  create_table "morning_monitorings", force: true do |t|
+    t.integer  "hr"
+    t.integer  "sleep"
+    t.string   "notes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pbs", force: true do |t|
+    t.string   "distance"
+    t.string   "split"
+    t.string   "time"
+    t.string   "date"
+    t.integer  "rate"
+    t.integer  "watt"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "plans", force: true do |t|
     t.string   "name"
@@ -98,6 +117,16 @@ ActiveRecord::Schema.define(version: 20140104160011) do
   add_index "users", ["club"], name: "index_users_on_club", using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "waters", force: true do |t|
+    t.string   "distance"
+    t.string   "BoatType"
+    t.string   "SessionDescription"
+    t.string   "crew"
+    t.string   "notes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "weights", force: true do |t|
     t.string   "exercise"

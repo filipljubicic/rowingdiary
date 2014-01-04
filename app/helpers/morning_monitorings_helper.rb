@@ -1,0 +1,2 @@
+module MorningMonitoringsHelper
+end

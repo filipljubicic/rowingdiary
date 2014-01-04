@@ -1,0 +1,37 @@
+<h1>Listing pbs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Distance</th>
+      <th>Split</th>
+      <th>Time</th>
+      <th>Date</th>
+      <th>Rate</th>
+      <th>Watt</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pbs.each do |pb| %>
+      <tr>
+        <td><%= pb.distance %></td>
+        <td><%= pb.split %></td>
+        <td><%= pb.time %></td>
+        <td><%= pb.date %></td>
+        <td><%= pb.rate %></td>
+        <td><%= pb.watt %></td>
+        <td><%= link_to 'Show', pb %></td>
+        <td><%= link_to 'Edit', edit_pb_path(pb) %></td>
+        <td><%= link_to 'Destroy', pb, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pb', new_pb_path %>

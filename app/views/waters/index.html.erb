@@ -1,0 +1,35 @@
+<h1>Listing waters</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Distance</th>
+      <th>Boattype</th>
+      <th>Sessiondescription</th>
+      <th>Crew</th>
+      <th>Notes</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @waters.each do |water| %>
+      <tr>
+        <td><%= water.distance %></td>
+        <td><%= water.BoatType %></td>
+        <td><%= water.SessionDescription %></td>
+        <td><%= water.crew %></td>
+        <td><%= water.notes %></td>
+        <td><%= link_to 'Show', water %></td>
+        <td><%= link_to 'Edit', edit_water_path(water) %></td>
+        <td><%= link_to 'Destroy', water, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Water', new_water_path %>

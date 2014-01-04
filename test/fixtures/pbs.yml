@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  distance: MyString
+  split: MyString
+  time: MyString
+  date: MyString
+  rate: 1
+  watt: 1
+
+two:
+  distance: MyString
+  split: MyString
+  time: MyString
+  date: MyString
+  rate: 1
+  watt: 1

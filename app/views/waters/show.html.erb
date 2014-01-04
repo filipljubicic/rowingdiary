@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Distance:</strong>
+  <%= @water.distance %>
+</p>
+
+<p>
+  <strong>Boattype:</strong>
+  <%= @water.BoatType %>
+</p>
+
+<p>
+  <strong>Sessiondescription:</strong>
+  <%= @water.SessionDescription %>
+</p>
+
+<p>
+  <strong>Crew:</strong>
+  <%= @water.crew %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @water.notes %>
+</p>
+
+<%= link_to 'Edit', edit_water_path(@water) %> |
+<%= link_to 'Back', waters_path %>

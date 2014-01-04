@@ -1,0 +1,29 @@
+<%= form_for(@morning_monitoring) do |f| %>
+  <% if @morning_monitoring.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@morning_monitoring.errors.count, "error") %> prohibited this morning_monitoring from being saved:</h2>
+
+      <ul>
+      <% @morning_monitoring.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :hr %><br>
+    <%= f.number_field :hr %>
+  </div>
+  <div class="field">
+    <%= f.label :sleep %><br>
+    <%= f.number_field :sleep %>
+  </div>
+  <div class="field">
+    <%= f.label :notes %><br>
+    <%= f.text_field :notes %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

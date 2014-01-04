@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Hr:</strong>
+  <%= @morning_monitoring.hr %>
+</p>
+
+<p>
+  <strong>Sleep:</strong>
+  <%= @morning_monitoring.sleep %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @morning_monitoring.notes %>
+</p>
+
+<%= link_to 'Edit', edit_morning_monitoring_path(@morning_monitoring) %> |
+<%= link_to 'Back', morning_monitorings_path %>
