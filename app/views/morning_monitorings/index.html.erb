@@ -1,9 +1,10 @@
-<h1>Listing morning_monitorings</h1>
+<div class="kutija">
+  <h1>Morning Monitoring</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Hr</th>
+      <th>Heart Rate</th>
       <th>Sleep</th>
       <th>Notes</th>
       <th></th>
@@ -13,19 +14,21 @@
   </thead>
 
   <tbody>
-    <% @morning_monitorings.each do |morning_monitoring| %>
+    <% current_user.morning_monitorings.each do |morning_monitoring| %>
       <tr>
         <td><%= morning_monitoring.hr %></td>
         <td><%= morning_monitoring.sleep %></td>
         <td><%= morning_monitoring.notes %></td>
-        <td><%= link_to 'Show', morning_monitoring %></td>
-        <td><%= link_to 'Edit', edit_morning_monitoring_path(morning_monitoring) %></td>
-        <td><%= link_to 'Destroy', morning_monitoring, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '', morning_monitoring, class: "glyphicon glyphicon-zoom-in" %></td>
+        <td><%= link_to '', edit_morning_monitoring_path(morning_monitoring), class: "glyphicon glyphicon-pencil" %></td>
+        <td><%= link_to '', morning_monitoring, method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-trash" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Morning monitoring', new_morning_monitoring_path %>
+<% if user_signed_in? %>
+<%= link_to 'New Morning Monitoring', new_morning_monitoring_path, class: "btn btn-success" %>
+<% end %>
+</div>

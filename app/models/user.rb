@@ -11,6 +11,9 @@ class User < ActiveRecord::Base
 
   has_many :ergos
   has_many :weights
+  has_many :morning_monitorings
+  has_many :pbs
+  has_many :waters
 
   validates :name, presence: true
   validates :club, presence: true

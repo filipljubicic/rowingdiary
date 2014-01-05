@@ -1,10 +1,12 @@
 class MorningMonitoringsController < ApplicationController
   before_action :set_morning_monitoring, only: [:show, :edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :show, :edit, :destroy, :index]
 
   # GET /morning_monitorings
   # GET /morning_monitorings.json
   def index
-    @morning_monitorings = MorningMonitoring.all
+    @morning_monitorings = MorningMonitoring.all.order(created_at: :desc)
   end
 
   # GET /morning_monitorings/1
@@ -14,7 +16,7 @@ class MorningMonitoringsController < ApplicationController
 
   # GET /morning_monitorings/new
   def new
-    @morning_monitoring = MorningMonitoring.new
+    @morning_monitoring = current_user.morning_monitorings.build
   end
 
   # GET /morning_monitorings/1/edit
@@ -24,7 +26,7 @@ class MorningMonitoringsController < ApplicationController
   # POST /morning_monitorings
   # POST /morning_monitorings.json
   def create
-    @morning_monitoring = MorningMonitoring.new(morning_monitoring_params)
+    @morning_monitoring = current_user.morning_monitorings.build(morning_monitoring_params)
 
     respond_to do |format|
       if @morning_monitoring.save
@@ -65,6 +67,11 @@ class MorningMonitoringsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_morning_monitoring
       @morning_monitoring = MorningMonitoring.find(params[:id])
+    end
+
+    def correct_user
+      @morning_monitoring = current_user.morning_monitorings.find_by(id: params[:id])
+      redirect_to morning_monitoring_path, notice: "Not authorized to edit this" if @morning_monitoring.nil?
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -1,34 +1,51 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h1 class="panel-title">View PBs</h1>
+        </div>
+        <div class="panel-body">
+
+<h3>
   <strong>Distance:</strong>
   <%= @pb.distance %>
-</p>
+</h3>
 
-<p>
+<h3>
   <strong>Split:</strong>
   <%= @pb.split %>
-</p>
+</h3>
 
-<p>
+<h3>
   <strong>Time:</strong>
   <%= @pb.time %>
-</p>
+</h3>
 
-<p>
-  <strong>Date:</strong>
-  <%= @pb.date %>
-</p>
-
-<p>
+<h3>
   <strong>Rate:</strong>
   <%= @pb.rate %>
-</p>
+</h3>
 
-<p>
+<h3>
+  <strong>Date:</strong>
+  <%= @pb.date %>
+</h3>
+
+<h3>
   <strong>Watt:</strong>
   <%= @pb.watt %>
-</p>
+</h3>
 
-<%= link_to 'Edit', edit_pb_path(@pb) %> |
-<%= link_to 'Back', pbs_path %>
+</div>
+    <div class="panel-body">
+    <% if @pb.user == current_user %>
+<%= link_to 'Edit', edit_pb_path(@pb), class: "btn btn-warning btn" %> |
+<% end %>
+<%= link_to 'Back', pbs_path, class: "btn btn-info btn" %>
+</div>
+    </div>
+  </div>
+</div>

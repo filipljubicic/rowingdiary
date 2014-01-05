@@ -10,9 +10,9 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="panel-body">
   <div class="field">
-    <%= f.label :hr %><br>
+    <%= f.label :heart_rate %><br>
     <%= f.number_field :hr %>
   </div>
   <div class="field">
@@ -24,6 +24,6 @@
     <%= f.text_field :notes %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>

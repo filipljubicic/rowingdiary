@@ -11,6 +11,7 @@
     </div>
   <% end %>
 
+  <div class="panel-body">
   <div class="field">
     <%= f.label :distance %><br>
     <%= f.text_field :distance %>
@@ -24,18 +25,18 @@
     <%= f.text_field :time %>
   </div>
   <div class="field">
-    <%= f.label :date %><br>
-    <%= f.text_field :date %>
-  </div>
-  <div class="field">
     <%= f.label :rate %><br>
     <%= f.number_field :rate %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.text_field :date %>
   </div>
   <div class="field">
     <%= f.label :watt %><br>
     <%= f.number_field :watt %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>

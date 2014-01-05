@@ -10,17 +10,17 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="panel-body">
   <div class="field">
     <%= f.label :distance %><br>
     <%= f.text_field :distance %>
   </div>
   <div class="field">
-    <%= f.label :BoatType %><br>
+    <%= f.label :Boat_Type %><br>
     <%= f.text_field :BoatType %>
   </div>
   <div class="field">
-    <%= f.label :SessionDescription %><br>
+    <%= f.label :Session_Description %><br>
     <%= f.text_field :SessionDescription %>
   </div>
   <div class="field">
@@ -32,6 +32,6 @@
     <%= f.text_field :notes %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>

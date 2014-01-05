@@ -1,13 +1,14 @@
+<div class="kutija">
 <h1>Listing pbs</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Distance</th>
       <th>Split</th>
       <th>Time</th>
-      <th>Date</th>
       <th>Rate</th>
+      <th>Date of PB</th>
       <th>Watt</th>
       <th></th>
       <th></th>
@@ -16,22 +17,25 @@
   </thead>
 
   <tbody>
-    <% @pbs.each do |pb| %>
+    <% current_user.pbs.each do |pb| %>
       <tr>
         <td><%= pb.distance %></td>
         <td><%= pb.split %></td>
         <td><%= pb.time %></td>
-        <td><%= pb.date %></td>
         <td><%= pb.rate %></td>
+        <td><%= pb.date %></td>
         <td><%= pb.watt %></td>
-        <td><%= link_to 'Show', pb %></td>
-        <td><%= link_to 'Edit', edit_pb_path(pb) %></td>
-        <td><%= link_to 'Destroy', pb, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '', pb, class: "glyphicon glyphicon-zoom-in" %></td>
+        <td><%= link_to '', edit_pb_path(pb), class: "glyphicon glyphicon-pencil" %></td>
+        <td><%= link_to '', pb, method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-trash" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
+<% if user_signed_in? %>
+<%= link_to 'New PB', new_pb_path, class: "btn btn-success" %>
+<% end %>
 
-<%= link_to 'New Pb', new_pb_path %>
+</div>

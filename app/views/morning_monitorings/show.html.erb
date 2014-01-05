@@ -1,19 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Hr:</strong>
-  <%= @morning_monitoring.hr %>
-</p>
+<div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-4">
+        <div class="panel panel-default">
+  		    <div class="panel-heading">
+            <h1 class="panel-title">View Morning Monitoring</h1>
+        </div>
+        <div class="panel-body">
 
-<p>
+<h3>
+  <strong>Heart Rate:</strong>
+  <%= @morning_monitoring.hr %>
+</h3>
+
+<h3>
   <strong>Sleep:</strong>
   <%= @morning_monitoring.sleep %>
-</p>
+</h3>
 
-<p>
+<h3>
   <strong>Notes:</strong>
   <%= @morning_monitoring.notes %>
-</p>
-
-<%= link_to 'Edit', edit_morning_monitoring_path(@morning_monitoring) %> |
-<%= link_to 'Back', morning_monitorings_path %>
+</h3>
+</div>
+ 		<div class="panel-body">
+ 			<% if @morning_monitoring.user == current_user %>
+<%= link_to 'Edit', edit_morning_monitoring_path(@morning_monitoring), class: "btn btn-warning btn" %> |
+		<% end %>
+<%= link_to 'Back', morning_monitorings_path, class: "btn btn-info btn" %>
+		</div>
+    </div>
+  </div>
+</div>

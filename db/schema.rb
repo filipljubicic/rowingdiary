@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140104194535) do
+ActiveRecord::Schema.define(version: 20140105121351) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,7 +45,10 @@ ActiveRecord::Schema.define(version: 20140104194535) do
     t.string   "notes"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
+
+  add_index "morning_monitorings", ["user_id"], name: "index_morning_monitorings_on_user_id", using: :btree
 
   create_table "pbs", force: true do |t|
     t.string   "distance"
@@ -56,7 +59,10 @@ ActiveRecord::Schema.define(version: 20140104194535) do
     t.integer  "watt"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
+
+  add_index "pbs", ["user_id"], name: "index_pbs_on_user_id", using: :btree
 
   create_table "plans", force: true do |t|
     t.string   "name"
@@ -126,7 +132,10 @@ ActiveRecord::Schema.define(version: 20140104194535) do
     t.string   "notes"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
+
+  add_index "waters", ["user_id"], name: "index_waters_on_user_id", using: :btree
 
   create_table "weights", force: true do |t|
     t.string   "exercise"

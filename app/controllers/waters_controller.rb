@@ -1,10 +1,12 @@
 class WatersController < ApplicationController
   before_action :set_water, only: [:show, :edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :show, :edit, :destroy, :index]
 
   # GET /waters
   # GET /waters.json
   def index
-    @waters = Water.all
+    @waters = Water.all.order(created_at: :desc)
   end
 
   # GET /waters/1
@@ -14,7 +16,7 @@ class WatersController < ApplicationController
 
   # GET /waters/new
   def new
-    @water = Water.new
+    @water = current_user.waters.build
   end
 
   # GET /waters/1/edit
@@ -24,7 +26,7 @@ class WatersController < ApplicationController
   # POST /waters
   # POST /waters.json
   def create
-    @water = Water.new(water_params)
+    @water = current_user.waters.build(water_params)
 
     respond_to do |format|
       if @water.save
@@ -65,6 +67,11 @@ class WatersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_water
       @water = Water.find(params[:id])
+    end
+
+    def correct_user
+      @water = current_user.waters.find_by(id: params[:id])
+      redirect_to waters_path, notice: "Not authorized to edit this" if @water.nil?
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
