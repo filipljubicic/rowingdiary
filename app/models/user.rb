@@ -18,20 +18,20 @@ class User < ActiveRecord::Base
   validates :name, presence: true
   validates :club, presence: true
 
-  after_create :create_a_customer
+  #after_create :create_a_customer
   after_create :send_welcome_email
 
-  def create_a_customer
-          token = self.stripe_card_token
+  #def create_a_customer
+  #        token = self.stripe_card_token
           
-          customer = Stripe::Customer.create(
-          :card => token,
-          :plan => 2000,
-          :id => coupon,
-          :email => self.email
-      )         
+   #       customer = Stripe::Customer.create(
+    #      :card => token,
+     #     :plan => 2000,
+      #    :id => coupon,
+          #:email => self.email
+     # )         
 
-         end
+      #   end
 
 private
 

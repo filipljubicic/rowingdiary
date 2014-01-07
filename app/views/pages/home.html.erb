@@ -2,13 +2,30 @@
 <div class="kutija">
 <div class="jumbotron center">
 
-    
-     	<p>Record a new session:</p>
-        <%= link_to 'Water', new_water_path, class: "btn btn-success" %> <%= link_to 'Ergo', new_ergo_path, class: "btn btn-warning" %> <%= link_to 'Weights', new_weight_path, class: "btn btn-success" %> <%= link_to 'Morning', new_morning_monitoring_path, class: "btn btn-warning" %> <%= link_to 'PB', new_pb_path, class: "btn btn-success" %></p>
-     	<p>View previous sessions:</p> 
-      <%= link_to 'Water', waters_path, class: "btn btn-info btn" %> <%= link_to 'Ergos', ergos_path, class: "btn btn-info" %> <%= link_to 'Weights', weights_path, class: "btn btn-info" %> <%= link_to 'Morning', morning_monitorings_path, class: "btn btn-info btn" %> <%= link_to 'PBs', pb_path(@pb), class: "btn btn-warning btn" %>
-</div>
+    <div class="btn-group">
+            <button data-toggle="dropdown" class="btn btn-success dropdown-toggle">Record a new session <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <li><%= link_to 'Water', new_water_path %></li>
+                <li><%= link_to 'Ergo', new_ergo_path %></li>
+                <li><%= link_to 'Weights', new_weight_path %></li>
+                <li><%= link_to 'Morning Monitoring', new_morning_monitoring_path %></li>
+                <li><%= link_to 'PB', new_pb_path %></li>
+            </ul>
+        </div>
+  
+<p></p>
 
+<div class="btn-group">
+            <button data-toggle="dropdown" class="btn btn-info dropdown-toggle">View Sessions <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <li><%= link_to 'Water', waters_path %></li>
+                <li><%= link_to 'Ergo', ergos_path %></li>
+                <li><%= link_to 'Weights', weights_path %></li>
+                <li><%= link_to 'Morning Monitoring', morning_monitorings_path %></li>
+                <li><%= link_to 'PB', pbs_path %></li>
+            </ul>
+        </div>
+</div>
 
          <% else %>
 <div class="container-carousel">
@@ -26,7 +43,7 @@
       <div class="active item"><img src='http://startuplibrary.co/wp-content/uploads/2014/01/5.jpg'></div> 
       <div class="carousel-caption">
         <h1>Your Online Training Diary</h1>
-              <p class="lead">For just $2.50 every 3 months. Start your 30 day free trial today!</p><%= link_to "Log in", user_session_path, class: "btn btn-large btn-info" %> 
+              <p class="lead">Join for free today!</p><%= link_to "Log in", user_session_path, class: "btn btn-large btn-info" %> 
               <%= link_to "Join today", new_user_registration_path, class: "btn btn-large btn-primary" %>
       </div>
     </div>

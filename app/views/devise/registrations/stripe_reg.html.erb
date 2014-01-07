@@ -24,7 +24,7 @@
   </div><!-- container -->
 </nav>
 <div class="kutija">
-<h2>Join today for free.</h2>
+<h2>Join today for $2.50 every 3 months and receive a 30 day trial.</h2>
 </div>
 
 	<div class="kutija">
@@ -65,6 +65,57 @@
           </div>
         </div>
         </div>
+
+      <% if @user.stripe_card_token.present? %>
+        Credit Card is on File
+      <% else %>
+
+        <div class="kutija">
+    <div class="row">
+        <div class="col-xs-12 col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Payment Details
+                    </h3>
+                  </br>
+                    <ul class="nav nav-pills nav-stacked">
+                        <li class="active"><span class="badge pull-right"><span class="glyphicon glyphicon-usd"></span>2.50</span> Quarterly Payment</a>
+                        </li>
+                      </ul>
+                </div>
+                <div class="panel-body">
+                    <form role="form">
+                    <div class="form-group">
+                        <label for="cardNumber">
+                            CARD NUMBER</label>
+                        <div class="input-group">
+                            <%= text_field_tag :card_number, nil, name: nil, class: 'form-control' %>
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-7 col-md-7">
+                            <div class="form-group">
+                                <label for="expityMonth">
+                                    EXPIRY DATE</label>
+                                <div>
+                                    <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month"} %>
+                                </div>
+                                <div>
+                                    <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year"} %>
+                            </div>
+                        </div>
+                        </br>
+                      </div>
+
+                        <div class="col-xs-7 col-md-7">
+                            <div class="form-group">
+                                <label for="cvCode">
+                                    CV CODE</label>
+                                <%= text_field_tag :card_code, nil, name: nil %>
+                            </div>
+                        </div>
                         
                     </div>
                     <div class="form-group">
@@ -78,6 +129,11 @@
         </div>
     </div>
 
+        
+      <% end %>
+<div class="kutija">
+<p>Your card will not be charged until after your 30 day trial. You can cancel your account at any point by emailing - <%= mail_to "info@rowingdiary.com" do %><span>info@rowingdiary.com</span>
+<% end %></p>
 </div>		
     <% end %>
 <div class="panel-footer">
